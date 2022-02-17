@@ -18,4 +18,9 @@
   <Import Project="..\..\build\NetCore.props" />
   <Import Project="..\..\build\NetFX.props" />
   <Import Project="..\..\build\ApiDiff.props" />
+
+  <PropertyGroup>
+    <!-- netstandard2.0 wasn't published before, ignore -->
+    <RunApiCompat Condition="'$(TargetFramework)' == 'netstandard2.0'">false</RunApiCompat>
+  </PropertyGroup>
 </Project>
