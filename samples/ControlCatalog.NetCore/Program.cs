@@ -118,9 +118,9 @@ namespace ControlCatalog.NetCore
                 })
                 .UseSkia()
                 .UseManagedSystemDialogs()
-                .AfterSetup(_ =>
+                .AfterSetup(builder =>
                 {
-                    Application.Current!.AttachDevTools(new Avalonia.Diagnostics.DevToolsOptions()
+                    builder.Instance!.AttachDevTools(new Avalonia.Diagnostics.DevToolsOptions()
                     {
                         StartupScreenIndex = 1,
                     });
